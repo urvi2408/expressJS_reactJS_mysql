@@ -30,7 +30,6 @@ const EmployeDetailsList = () => {
     handleUpload,
     handleDownload,
     handleButtonClick,
-    editEmployeeDetail,
     onChangeSearch,
   } = useEmployeeDetailsList();
 

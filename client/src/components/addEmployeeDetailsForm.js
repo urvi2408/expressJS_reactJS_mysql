@@ -13,7 +13,6 @@ const AddEmployeeDetailsForm = () => {
   const { state } = useLocation();
   const employeeDetailsRef = useRef();
   const { editID, handleFormSubmit } = useAddEmployee({ state });
-  console.log("state", state);
 
   return (
     <Formik

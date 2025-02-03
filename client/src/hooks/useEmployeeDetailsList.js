@@ -1,12 +1,9 @@
 import Axios from "axios";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router";
 import { debounce } from "lodash";
 
 const useEmployeeDetailsList = () => {
-  const navigate = useNavigate();
-
   const [employeeDetails, setEmployeeDetails] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [uploading, setUploading] = useState(false);
@@ -22,14 +19,6 @@ const useEmployeeDetailsList = () => {
   }, []);
 
   const fileInputRef = useRef(null);
-
-  const editEmployeeDetail = (ele) => {
-    navigate("/edit-employee-details", {
-      state: {
-        ele,
-      },
-    });
-  };
 
   const onChangeSearch = useCallback(
     debounce((e) => {
@@ -96,23 +85,6 @@ const useEmployeeDetailsList = () => {
     getEmployeeDetails(page, size, sortField, sortOrder);
   };
 
-  const handleSearch = (e) => {
-    console.log("e.target.value", e?.target?.value);
-
-    setSearch(e?.target?.value);
-    getEmployeeDetails(
-      currentPage,
-      pageSize,
-      sortField,
-      sortOrder,
-      e?.target?.value
-    );
-  };
-  const debouncedResults = useMemo(
-    () => debounce(handleSearch, 500),
-    [handleSearch]
-  );
-
   const handleDownload = () => {
     Axios.get("http://localhost:3001/download-employee-data", {
       responseType: "blob", // Important: Ensure you're receiving the file as a Blob
@@ -161,7 +133,6 @@ const useEmployeeDetailsList = () => {
   const deleteEmployeeDetail = (id) => {
     Axios.delete(`http://localhost:3001/delete-employee-details/${id}`)
       .then((res) => {
-        console.log("employeeDetails");
         setIsLoading(false);
         toast.success(res.data.message);
         getEmployeeDetails(
@@ -188,7 +159,6 @@ const useEmployeeDetailsList = () => {
     handleUpload,
     handleDownload,
     handleButtonClick,
-    editEmployeeDetail,
     onChangeSearch,
   };
 };
