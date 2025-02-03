@@ -1,0 +1,259 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+}
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 30px;
+  margin-top: 0px;
+}
+.ant-layout-sider {
+  transition: width 0.3s ease-in-out;
+}
+.sidebar {
+  background: #ddd4d0;
+  color: black;
+} /* Form Card */
+.ant-card {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Input */
+.form-input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Button Style */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button[type="button"],
+.ant-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="button"]:hover,
+.ant-btn:hover {
+  background-color: #1890ff;
+  color: white;
+}
+
+/* Body: Center content on the screen */
+/* body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7f7f7;
+  margin: 0;
+} */
+
+/* Sidebar Styling */
+.logo {
+  height: 32px;
+  margin: 16px;
+  background: #ddd4d0;
+  color: black;
+  font-size: 18px;
+  margin-left: 30px;
+  margin-top: 25px;
+  font-weight: 500px;
+}
+
+/* Header */
+.header {
+  background: #ddd4d0;
+  color: white;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+
+.header-title {
+  color: black;
+  margin-left: 16px;
+}
+
+/* Toggle Button */
+.menu-toggle {
+  color: black;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+/* Ensure Main Content is Properly Aligned */
+.main-wrapper {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+/* Form inputs */
+.information input {
+  width: 100%;
+  height: 35px;
+  font-size: 16px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.information label {
+  margin-top: 100px;
+}
+body {
+  background-color: #f7f7f7;
+  margin: 0;
+}
+
+/* Button */
+.information button {
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Right side - Table */
+
+/* Loading text */
+.loading-text {
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: #007bff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Table rows */
+.bordered-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Empty state styling */
+.no-data {
+  text-align: center;
+  font-weight: bold;
+  padding: 20px;
+  color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .main-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .information {
+    max-width: 100%;
+  }
+
+  /* .table-container {
+    width: 1800px;
+  } */
+}
+/* Ensure the form remains visible */
+.information {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  min-width: 300px; /* Ensures it doesn't shrink */
+  height: fit-content; /* Adjust height based on content */
+  margin-top: 10px;
+  overflow: auto; /* Enables scrolling if the table overflows */
+  max-height: 650px; /* Adjust max height as needed */
+  margin-left: 100px;
+}
+
+/* Prevent table container from growing infinitely */
+.table-container {
+  flex: 2;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 1700px;
+  /* min-height: 600px; */
+  display: flex;
+  /* max-width: 1000px; */
+  flex-direction: column; /* Stack table and pagination */
+  align-items: center;
+  margin-top: 10px;
+  max-height: 680px; /* Adjust max height as needed */
+}
+
+/* Make table scrollable */
+.bordered-table {
+  width: 100%;
+  border-collapse: collapse;
+  display: block; /* Ensure it works with overflow */
+  overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+/* Make table header sticky */
+.bordered-table thead th {
+  position: sticky;
+  top: 0;
+  background: #007bff;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+.pagination-wrapper {
+  display: flex;
+  justify-content: center; /* Align pagination inside */
+  align-items: center;
+  margin-top: auto; /* Push pagination to bottom */
+  width: 100%;
+  padding-top: 15px;
+  border-top: 1px solid #ddd; /* Optional: adds a separator */
+}
