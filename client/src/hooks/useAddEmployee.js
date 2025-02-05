@@ -18,7 +18,7 @@ const useAddEmployee = ({ state }) => {
       .then((res) => {
         toast.success(res.data.message);
         !!editID && setEditID("");
-        navigate("/employee-details-list");
+        navigate("/");
       })
       .catch((err) => {
         toast.error(err.response.data.message);

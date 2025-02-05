@@ -88,11 +88,8 @@ function App() {
             }}
           >
             <Routes>
-              <Route path="/" element={<AddEmployee />} />
-              <Route
-                path="/employee-details-list"
-                element={<EmployeDetailsList />}
-              />
+              {/* <Route path="/" element={<AddEmployee />} /> */}
+              <Route path="/" element={<EmployeDetailsList />} />
               <Route
                 path="/add-employee-details"
                 element={<AddEmployeeDetailsForm />}

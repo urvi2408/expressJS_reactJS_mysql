@@ -120,7 +120,7 @@ const EmployeDetailsList = () => {
               navigate("/add-employee-details");
             }}
           >
-            Add Employee Details
+            Add Details
           </Button>
           <Button
             icon={<DownloadOutlined />}
